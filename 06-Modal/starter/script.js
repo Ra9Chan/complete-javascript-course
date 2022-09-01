@@ -1,18 +1,24 @@
 'use strict';
-const button = document.getElementsByClassName('show-modal');
-const content = document.querySelector('.modal');
+const button = document.querySelectorAll('.show-modal');
+const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const close = document.querySelector('.close-modal');
-console.log(button);
+const closeFun = function () {
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+const openFun = function () {
+  modal.classList.remove('hidden'); //TODO
+  overlay.classList.remove('hidden');
+};
 
 for (let index = 0; index < button.length; index++) {
-  button[index].addEventListener('click', () => {
-    content.className = 'modal';
-    overlay.className = 'overlay';
-  });
+  button[index].addEventListener('click', openFun);
 }
-
-close.addEventListener('click', () => {
-  content.className = 'modal hidden';
-  overlay.className = 'overlay hidden';
+close.addEventListener('click', closeFun);
+overlay.addEventListener('click', closeFun);
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeFun();
+  }
 });
