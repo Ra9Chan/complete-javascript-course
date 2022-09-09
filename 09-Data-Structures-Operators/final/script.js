@@ -448,7 +448,7 @@ console.log(new Set('jonasschmedtmann').size);
 // Coding Challenge #2
 
 /* 
-Let's continue with our football betting app!
+Let's clontinue with our footbal betting app!
 
 1. Loop over the game.scored array and print each player name to the console, along with the goal number (Example: "Goal 1: Lewandowski")
 2. Use a loop to calculate the average odd and log it to the console (We already studied how to calculate averages, you can go check if you don't remember)
